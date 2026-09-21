@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact us - Get in touch with our customer service team.">
+    <title>Contact Us | NIKE STORE NAIROBI KENYA.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+          <a class="logo" href="index.html">
+<img src="images/logo.png"  alt="logo" width="100" height="100">
+            </a>
+            </div>
+            
+            <nav class="nav-desktop">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="backtoschoool.html">Back to School</a></li>
+                    <li><a href="Jordan.html">Jordan</a></li>
+                    <li><a href="converse.html">Converse</a></li>
+                    <li><a href="men.html">Men</a></li>
+                    <li><a href="women.html">Women</a></li>
+                    <li><a href="nikeskims.html">Nike SKIMS</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="promotions&discounts.html">Promotions</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="search-btn" aria-label="Open search">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                </button>
+                
+                <button class="cart-btn" aria-label="Open cart">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+                
+                <button class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <button class="search-close" aria-label="Close search">&times;</button>
+            <input type="text" class="search-input" placeholder="Search for products..." aria-label="Search products">
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+    
+    <!-- Cart Drawer -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-overlay"></div>
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Shopping Cart</h2>
+                <button class="cart-close" aria-label="Close cart">&times;</button>
+            </div>
+            <div class="cart-items" id="cart-items"></div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                     <span class="checkout-total-price">KSh 0.00</span>
+                <strong id="checkout-total-price">
+                        KSh 0
+                    </strong>
+                </div>
+            <button type="button" class="btn btn-primary btn-block checkout-btn" id="checkout-btn">
+    Checkout
+</button> 
+                <button class="btn btn-secondary btn-block continue-shopping">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+      <!-- Checkout Modal -->
+<div class="checkout-modal" id="checkout-modal">
+    <div class="checkout-overlay"></div>
+
+    <div class="checkout-content">
+
+        <div class="checkout-header">
+            <h2>Checkout</h2>
+            <button type="button" class="checkout-close" id="checkout-close">
+                &times;
+            </button>
+        </div>
+
+        <form
+            id="checkout-form"
+            action="https://formspree.io/f/xkjgnynd"
+            method="POST"
+        >
+
+            <h3>Customer Information</h3>
+
+            <div class="form-group">
+                <label for="customer-name">Full Name</label>
+                <input
+                    type="text"
+                    id="customer-name"
+                    name="customer_name"
+                    placeholder="Enter your full name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="customer-email">Email Address</label>
+                <input
+                    type="email"
+                    id="customer-email"
+                    name="customer_email"
+                    placeholder="Enter your email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="customer-phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="customer-phone"
+                    name="customer_phone"
+                    placeholder="e.g. 0712345678"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="delivery-location">Delivery Location</label>
+                <textarea
+                    id="delivery-location"
+                    name="delivery_location"
+                    placeholder="Enter your delivery address/location"
+                    rows="3"
+                    required
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="payment-method">Payment Method</label>
+
+                <select
+                    id="payment-method"
+                    name="payment_method"
+                    required
+                >
+                    <option value="">Select payment method</option>
+                    <option value="M-Pesa">M-Pesa</option>
+                    <option value="Cash on Delivery">Cash on Delivery</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                </select>
+            </div>
+
+            <!-- Cart order information will be inserted here -->
+            <input type="hidden" name="order_items" id="order-items">
+
+            <input type="hidden" name="order_total" id="order-total">
+
+            <div class="checkout-summary">
+
+                <h3>Order Summary</h3>
+
+                <div id="checkout-items"></div>
+
+                <div class="checkout-total">
+                    <strong>Total:</strong>
+                    <strong id="checkout-total-price">
+                        KSh 0
+                    </strong>
+                </div>
+
+            </div>
+
+            <button
+                type="submit"
+                class="btn btn-primary btn-block"
+            >
+                Place Order
+            </button>
+
+        </form>
+
+    </div>
+</div>
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-content">
+            <nav class="mobile-nav-list">
+                <a href="index.html" class="mobile-nav-link" style="border-radius: 30px;">Home</a>
+                <a href="backtoschoool.html" class="mobile-nav-link" style="border-radius: 30px;">Back to School</a>
+                <a href="Jordan.html" class="mobile-nav-link" style="border-radius: 30px;">Jordan</a>
+                <a href="converse.html" class="mobile-nav-link" style="border-radius: 30px;">Converse</a>
+                <a href="men.html" class="mobile-nav-link" style="border-radius: 30px;">Men</a>
+                <a href="women.html" class="mobile-nav-link" style="border-radius: 30px;">Women</a>
+                <a href="nikeskims.html" class="mobile-nav-link" style="border-radius: 30px;">Nike SKIMS</a>
+                <a href="sports.html" class="mobile-nav-link" style="border-radius: 30px;">Sports</a>
+                <a href="products.html" class="mobile-nav-link" style="border-radius: 30px;">Products</a>
+                <a href="promotions&discounts.html" class="mobile-nav-link" style="border-radius: 30px;">Promotions</a>
+                <a href="about.html" class="mobile-nav-link" style="border-radius: 30px;">About</a>
+                <a href="careers.html" class="mobile-nav-link" style="border-radius: 30px;">Careers</a>
+                <a href="help.html" class="mobile-nav-link" style="border-radius: 30px;">Help</a>
+                <a href="contact.html" class="mobile-nav-link active" style="border-radius: 30px;">Contact</a>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Contact Us</h1>
+                <p class="page-subtitle">We're here to help</p>
+            </div>
+        </section>
+        
+       <section class="section section-gray">
+            <div class="container">
+                <h2 class="section-title"> Make Your Order Here</h2>
+                <form action="https://formspree.io/f/xkjgnynd" method="post"  class="contact-form" >
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label >Full Name</label>
+                            <input type="text"   style="border-radius: 30px;" name="name"  required placeholder="Enter Your Name" >
+                        </div>
+                        <div class="form-group">
+                            <label >Email Address</label>
+                            <input type="email"  style="border-radius: 30px;"  name="email" required placeholder="Enter Your Email">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label >Phone Number</label>
+                            <input type="tel"   style="border-radius: 30px;" name="phone" required placeholder="Enter Your Phone NUmber">
+                        </div>
+                         <div class="form-group">
+                            <label >Your Order</label>
+                            <input type="text"   style="border-radius: 30px;" name="order" required placeholder="Make Your Order">
+                        </div>
+                        
+                        
+                        
+                        
+                        <div class="form-group">
+                            <label >Prices Of product(s) </label>
+                            <input type="text"  style="border-radius: 30px;"  name="subject" required placeholder="Enter Your Price Tag For Example Ksh.10000">
+                        </div>
+                     <div class="form-group">
+                            <label >Your Address / Location</label>
+                            <input type="text"   style="border-radius: 30px;" name="order" required placeholder="Enter Your Address / Location">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label >Message</label>
+                        <textarea  name="message" style="border-radius: 30px;"  rows="6" required placeholder="Describe Your product(s)"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Submit Order</button>
+                </form>
+            </div>
+        </section>
+        
+        <!-- Customer Support -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Customer Support</h2>
+                <div class="support-content">
+                    <p class="support-text">Our customer support team is available to assist you with any questions or concerns. We typically respond within 24 hours during business days.</p>
+                    <p class="support-text">For immediate assistance, please check our <a href="help.html">Help Center</a> for answers to common questions.</p>
+                </div>
+            </div>
+        </section>
+       
+       
+       
+        <!-- Contact Information -->
+        <section class="section">
+            <div class="container">
+                <div class="contact-info-grid">
+                    <div class="contact-info-card" style="border-radius: 30px;">
+                        <h3 class="contact-info-title">Email</h3>
+                        <p class="contact-info-text">support@storefront.com</p>
+                    </div>
+                    <div class="contact-info-card" style="border-radius: 30px;">
+                        <h3 class="contact-info-title">Phone</h3>
+                        <p class="contact-info-text">+1 (555) 123-4567</p>
+                    </div>
+                    <div class="contact-info-card" style="border-radius: 30px;">
+                        <h3 class="contact-info-title">Location</h3>
+                        <p class="contact-info-text">123 Fashion Street<br>New York, NY 10001</p>
+                    </div>
+                    <div class="contact-info-card" style="border-radius: 30px;">
+                        <h3 class="contact-info-title">Hours</h3>
+                        <p class="contact-info-text">Mon-Fri: 9AM-6PM<br>Sat-Sun: 10AM-4PM</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Form -->
+        <section class="section section-gray">
+            <div class="container">
+                <h2 class="section-title">Contact Us Today</h2>
+                <form  action="https://formspree.io/f/xkjgnynd" method="post"  class="contact-form" >
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label >Full Names</label>
+                            <input type="text"   style="border-radius: 30px;" name="name" required placeholder="Enter Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label >Email Address</label>
+                            <input type="email"  style="border-radius: 30px;"  name="email" required placeholder="Enter Your Email">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label >Phone Number</label>
+                            <input type="tel"  style="border-radius: 30px;" name="phone" required placeholder="Enter Your Phone NUmber">
+                        </div>
+                        <div class="form-group">
+                            <label >Subject</label>
+                            <input type="text"  style="border-radius: 30px;"  name="subject" required placeholder="Reason for Contact">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label >Message</label>
+                        <textarea  name="message" style="border-radius: 30px;"  rows="6" required placeholder="How Can We Help ?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                </form>
+            </div>
+        </section>
+        
+        <!-- Customer Support -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Customer Support</h2>
+                <div class="support-content">
+                    <p class="support-text">Our customer support team is available to assist you with any questions or concerns. We typically respond within 24 hours during business days.</p>
+                    <p class="support-text">For immediate assistance, please check our <a href="help.html">Help Center</a> for answers to common questions.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section section-gray" style="border-radius: 30px;">
+            <div class="container" style="border-radius: 30px;">
+                <h2 class="section-title">Submit Your Application</h2>
+                <form action="https://formspree.io/f/xkjgnynd" method="post"  class="contact-form"  >
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name"   style="border-radius: 30px;"   name="name" required >
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" style="border-radius: 30px;"  name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" style="border-radius: 30px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="position">Position Interested In</label>
+                        <select id="position" style="border-radius: 30px;"  name="position" required>
+                            <option value="">Select a position</option>
+                            <option value="sales">Sales Associate</option>
+                            <option value="customer-service">Customer Service Representative</option>
+                            <option value="warehouse">Warehouse Associate</option>
+                            <option value="marketing">Marketing Coordinator</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="resume">Resume/CV</label>
+                        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" style="border-radius: 30px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="cover-letter">Cover Letter</label>
+                        <textarea id="cover-letter" name="cover-letter" style="border-radius: 30px;"  rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Submit Application Here</button>
+                </form>
+            </div>
+        </section>
+        <!-- Social Media -->
+        <section class="section section-black">
+            <div class="container">
+                <div class="promo-content">
+                    <h2 class="promo-title">Follow Us on Social Media</h2>
+                    <p class="promo-text">Stay updated with the latest news and promotions</p>
+                    <div class="social-links-large">
+                        <a href="https://www.instagram.com/nike_nairobi_store"  target="_blank" class="social-link-large" style="border-radius: 30px;">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61590626879224&mibextid=rS40aB7S9Ucbxw6v" target="_blank" class="social-link-large" style="border-radius: 30px;">Facebook</a>
+                        <a href="https://www.tiktok.com/@nike.store.nairobi" target="_blank" class="social-link-large" style="border-radius: 30px;">TikTok</a>
+                        <a href="https://x.com/@nike_nairobi_ke" target="_blank" class="social-link-large" style="border-radius: 30px;">X</a>
+                        <a href="https://wa.me/+254762062060" target="_blank" class="social-link-large" style="border-radius: 30px;">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="men.html">Men</a></li>
+                        <li><a href="women.html">Women</a></li>
+                        <li><a href="sports.html">Sports</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="help.html#shipping">Shipping</a></li>
+                        <li><a href="help.html#returns">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="promotions&discounts.html">Promotions</a></li>
+                    </ul>
+                </div>
+                
+               <div class="footer-section">
+                    <h3 class="footer-title">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/nike_nairobi_store" target="_blank" class="social-link" aria-label="Instagram" style="border-radius: 30px;">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61590626879224&mibextid=rS40aB7S9Ucbxw6v" target="_blank" class="social-link" aria-label="Facebook" style="border-radius: 30px;">Facebook</a>
+                        <a href="https://www.tiktok.com/@nike.store.nairobi" target="_blank" class="social-link"  aria-label="TikTok"  style="border-radius: 30px;">TikTok</a>
+                        <a href="https://x.com/@nike_nairobi_ke"  target="_blank" class="social-link" aria-label="X" style="border-radius: 30px;">X</a>
+                        <a href="https://wa.me/+254762062060"   target="_blank" class="social-link" aria-label="WhatsApp" style="border-radius: 30px;">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p style="font-weight:bold;">&copy; 2026 Nike Store Nairobi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

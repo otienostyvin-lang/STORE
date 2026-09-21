@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium footwear, fashion, and sports storefront. Shop the latest sneakers, sportswear, and accessories.">
+    <title>Home | NIKE STORE NAIROBI KENYA.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                
+            <a class="logo" href="index.html">
+<img src="images/logo.png"  alt="logo" width="100" height="100">
+            </a>
+            </div>
+            
+            <nav class="nav-desktop">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="backtoschoool.html">Back to School</a></li>
+                    <li><a href="Jordan.html">Jordan</a></li>
+                    <li><a href="converse.html">Converse</a></li>
+                    <li><a href="men.html">Men</a></li>
+                    <li><a href="women.html">Women</a></li>
+                    <li><a href="nikeskims.html">Nike SKIMS</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="promotions&discounts.html">Promotions</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="search-btn" aria-label="Open search">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                </button>
+                
+                <button class="cart-btn" aria-label="Open cart">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+                
+                <button class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <button class="search-close" aria-label="Close search">&times;</button>
+            <input type="text" class="search-input" placeholder="Search for products..." aria-label="Search products">
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+    
+    <!-- Cart Drawer -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-overlay"></div>
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Shopping Cart</h2>
+                <button class="cart-close" aria-label="Close cart">&times;</button>
+            </div>
+            <div class="cart-items" id="cart-items"></div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="checkout-total-price">KSh 0.00</span>
+                <strong id="checkout-total-price">
+                        KSh 0
+                    </strong>
+                </div>
+              <button type="button" class="btn btn-primary btn-block checkout-btn" id="checkout-btn">
+    Checkout
+</button>  
+                <button class="btn btn-secondary btn-block continue-shopping">Continue Shopping</button>
+            
+            </div>
+        </div>
+    </div>
+    <!-- Checkout Modal -->
+<div class="checkout-modal" id="checkout-modal">
+    <div class="checkout-overlay"></div>
+
+    <div class="checkout-content">
+
+        <div class="checkout-header">
+            <h2>Checkout</h2>
+            <button type="button" class="checkout-close" id="checkout-close">
+                &times;
+            </button>
+        </div>
+
+        <form
+            id="checkout-form"
+            action="https://formspree.io/f/xkjgnynd"
+            method="POST"
+        >
+
+            <h3>Customer Information</h3>
+
+            <div class="form-group">
+                <label for="customer-name">Full Name</label>
+                <input
+                    type="text"
+                    id="customer-name"
+                    name="customer_name"
+                    placeholder="Enter your full name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="customer-email">Email Address</label>
+                <input
+                    type="email"
+                    id="customer-email"
+                    name="customer_email"
+                    placeholder="Enter your email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="customer-phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="customer-phone"
+                    name="customer_phone"
+                    placeholder="e.g. 0712345678"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="delivery-location">Delivery Location</label>
+                <textarea
+                    id="delivery-location"
+                    name="delivery_location"
+                    placeholder="Enter your delivery address/location"
+                    rows="3"
+                    required
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="payment-method">Payment Method</label>
+
+                <select
+                    id="payment-method"
+                    name="payment_method"
+                    required
+                >
+                    <option value="">Select payment method</option>
+                    <option value="M-Pesa">M-Pesa</option>
+                    <option value="Cash on Delivery">Cash on Delivery</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                </select>
+            </div>
+
+            <!-- Cart order information will be inserted here -->
+            <input type="hidden" name="order_items" id="order-items">
+
+            <input type="hidden" name="order_total" id="order-total">
+
+            <div class="checkout-summary">
+
+                <h3>Order Summary</h3>
+
+                <div id="checkout-items"></div>
+
+                <div class="checkout-total">
+                    <strong>Total:</strong>
+                    <strong id="checkout-total-price">
+                        KSh 0
+                    </strong>
+                </div>
+
+            </div>
+
+            <button
+                type="submit"
+                class="btn btn-primary btn-block"
+            >
+                Place Order
+            </button>
+
+        </form>
+
+    </div>
+</div>
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-content">
+            <nav class="mobile-nav-list">
+                <a href="index.html" class="mobile-nav-link active" style="border-radius: 30px;">Home</a>
+                <a href="backtoschoool.html" class="mobile-nav-link" style="border-radius: 30px;">Back to School</a>
+                <a href="Jordan.html" class="mobile-nav-link" style="border-radius: 30px;">Jordan</a>
+                <a href="converse.html" class="mobile-nav-link" style="border-radius: 30px;">Converse</a>
+                <a href="men.html" class="mobile-nav-link" style="border-radius: 30px;">Men</a>
+                <a href="women.html" class="mobile-nav-link" style="border-radius: 30px;">Women</a>
+                <a href="nikeskims.html" class="mobile-nav-link" style="border-radius: 30px;">Nike SKIMS</a>
+                <a href="sports.html" class="mobile-nav-link" style="border-radius: 30px;">Sports</a>
+                <a href="products.html" class="mobile-nav-link" style="border-radius: 30px;">Products</a>
+                <a href="promotions&discounts.html" class="mobile-nav-link" style="border-radius: 30px;">Promotions</a>
+                <a href="about.html" class="mobile-nav-link" style="border-radius: 30px;">About</a>
+                <a href="careers.html" class="mobile-nav-link" style="border-radius: 30px;">Careers</a>
+                <a href="help.html" class="mobile-nav-link" style="border-radius: 30px;">Help</a>
+                <a href="contact.html" class="mobile-nav-link" style="border-radius: 30px;">Contact</a>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="slider">
+    <h2 class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 2rem;">WELCOME TO NIKE STORE NAIROBI</h2>
+          <br>
+            <div class="slides">
+
+        <div class="slide">
+            
+         <div class="content">
+          <img src="images/play1.jpg" alt="Shoe 1" style="border-radius:1%;object-fit:cover;">
+            <a href="men.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+
+        <div class="slide">
+           <div class="content">
+            <img src="images/play2.jpg" alt="Shoe 2" style="border-radius:1%;object-fit:cover;">
+       <a href="women.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+
+        <div class="slide">
+            <div class="content">
+            <img src="images/play1.jpg" alt="Shoe 3" style="border-radius:1%;object-fit:cover;">
+        <a href="men.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+
+        <div class="slide">
+           <div class="content">
+            <img src="images/play2.jpg" alt="Shoe 4" style="border-radius:1%;object-fit:cover;">
+            <a href="women.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+
+    </div>
+</section>
+             
+          <section class="section">
+      <a href="backtoschoool.html" class="category-card">
+        <img src="images/tracksuit.png"  alt="logo"  style="border-radius:1%;object-fit:cover;border:1px solid black;">
+             </a>   
+      <div class="hero-content container" >
+        
+        <h2 style="font-size:3rem;font-weight: bold;font-style: unset;"> STUDIO FLEECE.</h2>
+        <p style="font-size:1.2rem;">It's Just a Tracksuit Until It's Not.</p>
+        
+    </div>
+       
+    <div class="content">
+           <a href="backtoschoool.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+       <a href="contact.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Learn More</a>
+       
+        </div>
+    
+    </section>   
+
+ <section class="slider">
+    <h2>Welcome to Nike Store Nairobi</h2>
+    <div class="slides">
+
+        <div class="slide">
+            
+         <div class="content">
+          <img src="images/fit.jpg" alt="Shoe 1" style="border-radius:1%;object-fit:cover;border:2px solid black;">
+            <a href="nikeskims.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+
+        <div class="slide">
+           <div class="content">
+            <img src="images/check.jpg" alt="Shoe 2" style="border-radius:1%;object-fit:cover;border:2px solid black;">
+       <a href="nikeskims.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+
+        <div class="slide">
+            <div class="content">
+            <img src="images/fit.jpg" alt="Shoe 3" style="border-radius:1%;object-fit:cover;border:2px solid black;">
+        <a href="nikeskims.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+
+        <div class="slide">
+           <div class="content">
+            <img src="images/check.jpg" alt="Shoe 4" style="border-radius:1%;object-fit:cover;border:2px solid black;">
+            <a href="nikeskims.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+
+    </div>
+</section>
+
+    <section class="section">
+       <a href="products.html" class="category-card">
+        <img src="images/top.jpg"  alt="Shoe 1"  style="border-radius:1%;object-fit:cover;border:2px solid black;">
+         </a>       
+      <div class="hero-content container">
+        <br>
+        <h1 style="font-size:3rem;font-weight: bold;" class="big-heading">SHOW THEM WHERE YOU STAND.</h1>
+        <p style="font-size:1.2rem;">Division lines , drawn.The 2026 Rivalries Collection is touching down.</p>
+        <div class="hero-actions">
+          <a href="products.html" class="btn btn-primary" style="border-radius: 30px;">Shop Collection</a>
+          
+        </div>
+      </div>
+    </section>
+
+        
+        <!-- Categories -->
+     
+        
+        <section class="section section-gray">
+<h2>Welcome To Nike Store Nairobi</h2>
+            <div class="row">
+             <div class="column" style="border-radius: 30px;">
+                       <a href="men.html" class="category-card">
+                <img src="images/men.jpg"  alt="Shoe 1"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                  <div  style="font-size:1.5rem;" >Shop men's</div>
+                    </a>
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="women.html" class="category-card">
+                <img src="images/women.jpg"  alt="Shoe 1"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                  <div  style="font-size:1.5rem;" >Shop Women's</div>
+                    </a>
+                </div>
+        
+         <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                <img src="images/lifestyle.jpg"  alt="Shoe 1"   style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                  <div  style="font-size:1.5rem;" >Shop Lifestyle</div>
+                    </a>
+                </div>
+        </div>
+                
+                
+        
+        
+            </section>
+    
+     <section class="section">
+      <a href="Jordan.html" class="category-card">
+        <img src="images/thewait.png"   alt="Shoe 1"   style="border-radius:1%;object-fit:cover;border:1px solid black;">
+     </a>
+      <div class="hero-content container" >
+        
+        <h2 style="font-size:3rem;font-weight: bold;font-style: unset;">THE WAIT IS OVER.</h2>
+        <p style="font-size:1.2rem;">After two decades,the Air Jordan "Tour Yellow" returns.</p>
+        
+    </div>
+       
+    <div class="content">
+           <a href="Jordan.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+    
+    </section>
+    
+    <section class="section">
+      <a href="sports.html" class="category-card">
+        <img src="images/stars.png"  alt="Shoe 1"  style="border-radius:1%;object-fit:cover;border:1px solid black;">
+      </a>   
+      <div class="hero-content container" >
+        
+        <h2 style="font-size:3rem;font-weight: bold;font-style: unset;">HARD IN THE PAINT.</h2>
+        <p style="font-size:1.2rem;">Gear up for NYC'S iggest tennis showdown in the hoops-inspired Slam City collection.</p>
+        
+    </div>
+       
+    <div class="content">
+           <a href="sports.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+    
+    </section>
+    
+    
+     <section class="section section-gray">
+<h2>Welcome To Nike Store Nairobi</h2>
+        <div class="row"></div>
+             <div class="column" style="border-radius: 30px;">
+                       <a href="sports.html" class="category-card">
+                <div  style="font-size:1.5rem;" >Nike.Just Do It.</div>
+      
+                        <img src="images/sabalenka.jpg" alt="Shoe 1"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                  
+                    </a>
+                </div>
+            
+                <div class="column" style="border-radius: 30px;">
+                       <a href="sports.html" class="category-card">
+                <div  style="font-size:1.5rem;" >Nike.Just Do It.</div>
+                        <img src="images/osaka.jpg"  alt="Shoe 1"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 
+                    </a>
+                </div>
+            
+         <div class="column" style="border-radius: 30px;">
+                       <a href="sports.html" class="category-card">
+                <div  style="font-size:1.5rem;" >Nike.Just Do It.</div>
+                        <img src="images/serena.jpg"  alt="shoe 1" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 
+                    </a>
+                </div>
+            </section>
+              <h2>Welcome To Nike Store Nairobi</h2>
+            <section class="section section-gray">
+            <h2>Welcome To Nike Store Nairobi</h2>
+                <div class="column" style="border-radius: 30px;">
+                       <a href="sports.html" class="category-card">
+                <div  style="font-size:1.5rem;" >Nike.Just Do It.</div>
+                        <img src="images/carlos.jpg"  alt="Shoe 1"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                  
+                    </a>
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="sports.html" class="category-card">
+               <div  style="font-size:1.5rem;" >Nike.Just Do It.</div>
+                        <img src="images/zheng.jpg"  alt="Shoe 1"    style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 
+                    </a>
+                </div>
+        
+         <div class="column" style="border-radius: 30px;">
+                       <a href="sports.html" class="category-card">
+                <div  style="font-size:1.5rem;" >Nike.Just Do It.</div>
+                        <img src="images/sinner.jpg"  alt="Shoe 1" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 
+                    </a>
+                </div>
+            
+                
+</section>
+   
+   
+
+<section class="slider">
+    <h2>Welcome To Nike Store Nairobi</h2>
+    <div class="slides">
+
+        <div class="slide">
+            
+         <div class="content">
+          <img src="images/tracksuit.png" alt="Shoe 1" style="border-radius:1%;object-fit:cover;border:2px solid black;">
+            <a href="backtoschoool.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+
+        <div class="slide">
+           <div class="content">
+            <img src="images/fleece.jpg" alt="Shoe 2" style="border-radius:1%;object-fit:cover;border:2px solid black;">
+       <a href="backtoschoool.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+
+        <div class="slide">
+            <div class="content">
+            <img src="images/tracksuit.png" alt="Shoe 3" style="border-radius:1%;object-fit:cover;border:2px solid black;">
+        <a href="backtoschoool.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+
+        <div class="slide">
+           <div class="content">
+            <img src="images/fleece.jpg" alt="Shoe 4" style="border-radius:1%;object-fit:cover;border:2px solid black;">
+            <a href="backtoschoool.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+     <section class="section section-gray">
+ <h2>Welcome To Nike Store Nairobi</h2>
+        <div class="row"></div>
+             <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/hoodies.jpg"  alt="Hoodie" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                  <div  style="font-size:1.5rem;" >Hoodies</div>
+                    </a>
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/shortss.jpg"  alt="Shorts" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 <div  style="font-size:1.5rem;" >Shorts</div>
+                    </a>
+                </div>
+        
+         <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+              
+                        <img src="images/tops.jpg"  alt="Tops" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                   <div  style="font-size:1.5rem;" >Tops</div>
+                    </a>
+                </div>
+            </section>
+                <section class="section section-gray">
+             <h2>Welcome To Nike Store Nairobi</h2>
+                    <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/pants.jpg"  alt="Pants" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                  <div  style="font-size:1.5rem;" >Pants</div>
+                    </a>
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+               
+                        <img src="images/shoes.jpg"  alt="Shoes" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 <div  style="font-size:1.5rem;" >Shoes</div>
+                    </a>
+                </div>
+        
+         </section>
+
+ <section class="section">
+      <a href="promotions&discounts.html" class="category-card">
+        <img src="images/red1.jpg" alt="shoe 1"  style="border-radius:1%;object-fit:cover;border:1px solid black;">
+      </a>
+      <div class="hero-content container" >
+        
+         <h2 style="font-size:3rem;font-weight: bold;font-style: unset;">PEGASUS PLUS 2</h2>
+        <p style="font-size:1.2rem;">Power tempo training for race day.</p>
+        
+    </div>
+       
+    <div class="content">
+           <a href="promotions&discounts.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+    
+    </section>
+ <section class="section section-gray">
+         <h2>Welcome To Nike Store Nairobi</h2>
+    <div class="column" style="border-radius: 30px;">
+                       <a href="promotions&discounts.html" class="category-card">
+                
+                        <img src="images/red2.jpg"  alt="Shoe 2" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                  <div  style="font-size :1.2em;" >A stacked ZoomX foam midsole and exposed Air Zoom unit deliver 18% more energy return.</div>
+                    </a>
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="promotions&discounts.html" class="category-card">
+               
+                        <img src="images/red3.jpg"  alt="Shoe 3" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 <div  style="font-size:1.2em;">Engineered mesh helps keep the upper lightweight and breathable.</div>
+                    </a>
+                </div>
+        <div class="column" style="border-radius: 30px;">
+                       <a href="promotions&discounts.html" class="category-card">
+               
+                        <img src="images/red4.jpg"  alt="Shoe 4" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                
+                    </a>
+                </div>
+         </section>
+
+ <section class="section">
+      
+        <img src="images/allconditionsgear.jpg" alt="All Conditions Gear" style="border-radius:1%;object-fit:cover;border:1px solid black;">
+                
+      <div class="hero-content container" >
+        <div  style="font-size:1.2em;" >ACG Aireez Long-Sleeve</div>
+        <h2 style="font-size:3rem;font-weight: bold;font-style: unset;">Not Today,Sun.</h2>
+        
+    
+    </div>
+       
+    <div class="content">
+           <a href="men.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+    
+    </section>
+
+ <section class="section">
+    <a href="converse.html" class="category-card">
+        <img src="images/catchme.jpg" alt="Catch Me If You Camo"  style="border-radius:1%;object-fit:cover;border:1px solid black;">
+    </a>
+      <div class="hero-content container" >
+        <div  style="font-size:1.2em;" >ACG Chamo Camo Collection</div>
+        <h2 style="font-size:3rem;font-weight: bold;font-style: unset;">Catch Me If You Camo!</h2>
+        
+        
+    </div>
+       
+    <div class="content">
+           <a href="converse.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+    
+    </section>
+<section class="section">
+      <a href="sports.html" class="category-card">
+        <img src="images/carlos.jpg" alt="NikeCourt"  style="border-radius:1%;object-fit:cover;border:1px solid black;">
+      </a>
+      <div class="hero-content container" >
+        <div  style="font-size:1.2em;" >NikeCourt</div>
+        <h2 style="font-size:3rem;font-weight: bold;font-style: unset;">Slam City Collection</h2>
+        
+        
+    </div>
+       
+    <div class="content">
+           <a href="sports.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+    
+    </section>
+
+
+
+
+
+
+ 
+
+
+     <section class="section section-gray">
+ <h2>Welcome To Nike Store Nairobi</h2>
+        <div class="row"></div>
+             <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/studio.jpg"  alt="Studio" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 
+                    </a>
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/gym.jpg"  alt="Gym" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 
+                    </a>
+                </div>
+        
+         <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+              
+                        <img src="images/girllifestyle.jpg"  alt="Girl Lifestyle" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                   
+                    </a>
+                </div>
+            </section>
+
+   <section class="section">
+       <h2>Welcome To Nike Store Nairobi</h2>
+       <a href="sports.html" class="category-card">
+       <img src="images/mbappe.jpg"  alt="Shoe 1" style="border-radius:1%;object-fit:cover;border:1px solid black;">
+       </a>
+      <div class="hero-content container" >
+        
+        
+        <p style="font-size:1.2rem;">Pure pace.Zero mercy.Blow past defenders in the Vapor pro 'CeeDee Lamb',engineered with an ultra-light plate for raw speed.</p>
+        
+    </div>
+       
+    <div class="content">
+           <a href="sports.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+    
+    </section>
+  
+            <section class="section section-gray">
+ <h2 style="font-size:5rem;font-weight: bold;font-style: unset;">SHOP OUR ICONS</h2>
+       
+
+    <div class="row"></div>
+             <div class="column;product-price" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/airjordan1.jpg"  alt="Air Jordan 1" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 
+                    </a>
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/airmax.jpg"  alt="Air Max" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 
+                    </a>
+                </div>
+        
+         <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+              
+                        <img src="images/graphic.jpg"  alt="Graphic" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                   
+                    </a>
+                </div>
+             
+            </section>
+  <section class="section section-gray">
+ <h2>Welcome To Nike Store Nairobi</h2>
+    <div class="row"></div>
+             <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/dunk.jpg"  alt="Dunk" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 
+                    </a>
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/greenairforce1.jpg"  alt="Green Air Force 1" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 
+                    </a>
+                </div>
+        
+         <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+              
+                        <img src="images/247collection.jpg"  alt="247 Collection" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                   
+                    </a>
+                </div>
+            </section>
+  <section class="section section-gray">
+ <h2>Welcome To Nike Store Nairobi</h2>
+    <div class="row"></div>
+             <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/vomero5.jpg"  alt="Vomero 5" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 
+                    </a>
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/sweatsandshirts.jpg"  alt="Sweats and Shirts" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 
+                    </a>
+                </div>
+        
+         <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+              
+                        <img src="images/acgshoe.jpg"  alt="ACG Shoe" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                   
+                    </a>
+                </div>
+            </section>
+  <section class="section section-gray">
+<h2>Welcome To Nike Store Nairobi</h2>
+  </section>
+ 
+    <div class="row"></div>
+             <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/pegasus.jpg"  alt="Pegasus" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 
+                    </a>
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/vomeroplus.png"  alt="Vomero Plus" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 
+                    </a>
+                </div>
+        
+         <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+              
+                        <img src="images/metconshoe.jpg"  alt="Metcon Shoe" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                   
+                    </a>
+                </div>
+            
+            
+  <section class="section section-gray">
+ <h2>Welcome To Nike Store Nairobi</h2>
+    <div class="row"></div>
+             <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/fangear.jpg"  alt="Fan Gear" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 
+                    </a>
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/jordanretro.jpg"  alt="Jordan Retro" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 
+                    </a>
+                </div>
+        
+         <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+              
+                        <img src="images/ja4.jpg"  alt="JA4" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                   
+                    </a>
+                </div>
+            </section>
+  <section class="section section-gray">
+ <h2>Welcome To Nike Store Nairobi</h2>
+    <div class="row"></div>
+             <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/airjordan41.jpg"  alt="Air Jordan 41" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 
+                    </a>
+                </div>
+         <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+              
+                        <img src="images/sabrina.png"  alt="Sabrina" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                   
+                    </a>
+                </div>
+              <div class="column;" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+              
+                        <img src="images/airjordan1.jpg"  alt="Air Jordan 1" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                   
+                    </a>
+               
+                </div>
+                
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <!-- Featured Products -->
+       
+       
+       
+       
+        <section class="section section-gray">
+            <div class="container cards-grid;product-price;">
+                <h2 class="section-title">Featured Products</h2>
+                <div class="products-grid" id="featured-products"></div>
+            </div>
+        </section>
+        <br>
+       
+       
+      
+        
+        
+        
+        
+        
+        <!-- New Arrivals -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">New Arrivals</h2>
+                <div class="products-grid" id="new-arrivals"></div>
+            </div>
+        </section>
+        
+        <!-- Promotional Section -->
+        <section class="section section-black">
+            <div class="container">
+                <div class="promo-content">
+                    <h2 class="promo-title">Special Offer</h2>
+                    <p class="promo-text">Get 20% off on your first order</p>
+                    <a href="promotions&discounts.html" class="btn btn-white" style="border-radius: 30px;">View Promotions</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Customer Reviews -->
+        <section class="section">
+            <div class="container" >
+                <h2 class="section-title">Customer Reviews</h2>
+                <div class="reviews-grid">
+                    <div class="review-card" style="border-radius: 50px;">
+                        <div class="review-rating">★★★★★</div>
+                        <p class="review-text">"Amazing quality and fast shipping. The sneakers are exactly what I wanted!"</p>
+                        <p class="review-author">- John D.</p>
+                    </div>
+                    <div class="review-card" style="border-radius: 50px;">
+                        <div class="review-rating">★★★★★</div>
+                        <p class="review-text">"Best online shopping experience. Great customer service and premium products."</p>
+                        <p class="review-author">- Sarah M.</p>
+                    </div>
+                    <div class="review-card" style="border-radius: 50px;">
+                        <div class="review-rating">★★★★★</div>
+                        <p class="review-text">"Love the selection! Found exactly what I was looking for at a great price."</p>
+                        <p class="review-author">- Mike R.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter -->
+        <section class="section section-gray">
+            <div class="container">
+                <div class="newsletter">
+                    <h2 class="newsletter-title">Subscribe to Our Newsletter</h2>
+                    <p class="newsletter-text">Get the latest updates on new products and exclusive offers</p>
+                    <form action="https://formspree.io/f/xkjgnynd" method="post" class="contact-form"   >
+                       <div class="form-group">
+                            <label for="contact-email">Email Address</label>
+                            <input type="email" id="contact-email" style="border-radius: 30px;"  name="email" required placeholder="Enter Your Email">
+                        </div> 
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                       
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="men.html">Men</a></li>
+                        <li><a href="women.html">Women</a></li>
+                        <li><a href="sports.html">Sports</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="help.html#shipping">Shipping</a></li>
+                        <li><a href="help.html#returns">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="promotions&discounts.html">Promotions</a></li>
+                    </ul>
+                </div>
+                
+               <div class="footer-section">
+                    <h3 class="footer-title">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/nike_nairobi_store" target="_blank" class="social-link" aria-label="Instagram" style="border-radius: 30px;">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61590626879224&mibextid=rS40aB7S9Ucbxw6v" target="_blank" class="social-link" aria-label="Facebook" style="border-radius: 30px;">Facebook</a>
+                        <a href="https://www.tiktok.com/@nike.store.nairobi" target="_blank" class="social-link"  aria-label="TikTok"  style="border-radius: 30px;">TikTok</a>
+                        <a href="https://x.com/@nike_nairobi_ke"  target="_blank" class="social-link" aria-label="X" style="border-radius: 30px;">X</a>
+                        <a href="https://wa.me/+254762062060"   target="_blank" class="social-link" aria-label="WhatsApp" style="border-radius: 30px;">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p style="font-weight:bold;">&copy; 2026 Nike Store Nairobi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

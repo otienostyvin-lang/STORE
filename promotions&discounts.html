@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Special promotions and discounts - Save on sneakers, sportswear, and accessories.">
+    <title>Promotions & Discounts | NIKE STORE NAIROBI KENYA.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                  <a class="logo" href="index.html">
+<img src="images/logo.png"  alt="logo" width="100" height="100">
+            </a>
+            </div>
+            
+            <nav class="nav-desktop">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="backtoschoool.html">Back to School</a></li>
+                    <li><a href="Jordan.html">Jordan</a></li>
+                    <li><a href="converse.html">Converse</a></li>
+                    <li><a href="men.html">Men</a></li>
+                    <li><a href="women.html">Women</a></li>
+                    <li><a href="nikeskims.html">Nike SKIMS</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="promotions&discounts.html" class="active">Promotions</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="search-btn" aria-label="Open search">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                </button>
+                
+                <button class="cart-btn" aria-label="Open cart">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+                
+                <button class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <button class="search-close" aria-label="Close search">&times;</button>
+            <input type="text" class="search-input" placeholder="Search for products..." aria-label="Search products">
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+    
+    <!-- Cart Drawer -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-overlay"></div>
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Shopping Cart</h2>
+                <button class="cart-close" aria-label="Close cart">&times;</button>
+            </div>
+            <div class="cart-items" id="cart-items"></div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                 <span class="checkout-total-price">KSh 0.00</span>
+                <strong id="checkout-total-price">
+                        KSh 0
+                    </strong>
+                </div>
+                <button type="button" class="btn btn-primary btn-block checkout-btn" id="checkout-btn">
+    Checkout
+</button>  
+                <button class="btn btn-secondary btn-block continue-shopping">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+     <!-- Checkout Modal -->
+<div class="checkout-modal" id="checkout-modal">
+    <div class="checkout-overlay"></div>
+
+    <div class="checkout-content">
+
+        <div class="checkout-header">
+            <h2>Checkout</h2>
+            <button type="button" class="checkout-close" id="checkout-close">
+                &times;
+            </button>
+        </div>
+
+        <form
+            id="checkout-form"
+            action="https://formspree.io/f/xkjgnynd"
+            method="POST"
+        >
+
+            <h3>Customer Information</h3>
+
+            <div class="form-group">
+                <label for="customer-name">Full Name</label>
+                <input
+                    type="text"
+                    id="customer-name"
+                    name="customer_name"
+                    placeholder="Enter your full name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="customer-email">Email Address</label>
+                <input
+                    type="email"
+                    id="customer-email"
+                    name="customer_email"
+                    placeholder="Enter your email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="customer-phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="customer-phone"
+                    name="customer_phone"
+                    placeholder="e.g. 0712345678"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="delivery-location">Delivery Location</label>
+                <textarea
+                    id="delivery-location"
+                    name="delivery_location"
+                    placeholder="Enter your delivery address/location"
+                    rows="3"
+                    required
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="payment-method">Payment Method</label>
+
+                <select
+                    id="payment-method"
+                    name="payment_method"
+                    required
+                >
+                    <option value="">Select payment method</option>
+                    <option value="M-Pesa">M-Pesa</option>
+                    <option value="Cash on Delivery">Cash on Delivery</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                </select>
+            </div>
+
+            <!-- Cart order information will be inserted here -->
+            <input type="hidden" name="order_items" id="order-items">
+
+            <input type="hidden" name="order_total" id="order-total">
+
+            <div class="checkout-summary">
+
+                <h3>Order Summary</h3>
+
+                <div id="checkout-items"></div>
+
+                <div class="checkout-total">
+                    <strong>Total:</strong>
+                    <strong id="checkout-total-price">
+                        KSh 0
+                    </strong>
+                </div>
+
+            </div>
+
+            <button
+                type="submit"
+                class="btn btn-primary btn-block"
+            >
+                Place Order
+            </button>
+
+        </form>
+
+    </div>
+</div>
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-content">
+            <nav class="mobile-nav-list">
+                <a href="index.html" class="mobile-nav-link" style="border-radius: 30px;">Home</a>
+                <a href="backtoschoool.html" class="mobile-nav-link" style="border-radius: 30px;">Back to School</a>
+                <a href="Jordan.html" class="mobile-nav-link" style="border-radius: 30px;">Jordan</a>
+                <a href="converse.html" class="mobile-nav-link" style="border-radius: 30px;">Converse</a>
+                <a href="men.html" class="mobile-nav-link" style="border-radius: 30px;">Men</a>
+                <a href="women.html" class="mobile-nav-link" style="border-radius: 30px;">Women</a>
+                <a href="nikeskims.html" class="mobile-nav-link" style="border-radius: 30px;">Nike SKIMS</a>
+                <a href="sports.html" class="mobile-nav-link" style="border-radius: 30px;">Sports</a>
+                <a href="products.html" class="mobile-nav-link" style="border-radius: 30px;">Products</a>
+                <a href="promotions&discounts.html" class="mobile-nav-link active" style="border-radius: 30px;">Promotions</a>
+                <a href="about.html" class="mobile-nav-link" style="border-radius: 30px;">About</a>
+                <a href="careers.html" class="mobile-nav-link" style="border-radius: 30px;">Careers</a>
+                <a href="help.html" class="mobile-nav-link" style="border-radius: 30px;">Help</a>
+                <a href="contact.html" class="mobile-nav-link" style="border-radius: 30px;">Contact</a>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Promotional Hero -->
+          <section class="slider">
+   <h2 class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 2rem;"> NIKE STORE NAIROBI</h2>
+            <div class="slides">
+
+        <div class="slide">
+            
+         <div class="content">
+          <img src="images/nike1.jpg" alt="Shoe 1" style="border-radius:1%;object-fit:cover;">
+            <a href="products.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+
+        <div class="slide">
+           <div class="content">
+            <img src="images/Nike.jpg" alt="Shoe 2" style="border-radius:1%;object-fit:cover;">
+       <a href="products.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+
+        <div class="slide">
+            <div class="content">
+            <img src="images/nike1.jpg" alt="Shoe 3" style="border-radius:1%;object-fit:cover;">
+        <a href="products.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+
+        <div class="slide">
+           <div class="content">
+            <img src="images/Nike.jpg" alt="Shoe 4" style="border-radius:1%;object-fit:cover;">
+            <a href="products.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+
+    </div>
+</section>
+         
+           
+            <section class="section section-gray">
+
+                <h1>Welcome To Nike Store Nairobi</h1>
+                <div class="row"></div>
+             <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+               
+                        <img src="images/promo1.jpg"  alt="s"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                  </a>
+                        <div  style="color:black;font-weight: bold;">Nike Air Max Moto 2K SE</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Women's Shoes</div>
+                    
+                 <span style="font-weight:bold;font-size:1.2rem;" >Ksh 15,199.62 </span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 24,319.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">28% off</div>
+            
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/promo2.jpg"  alt="s"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+               </a>
+                        <div  style="color:black;font-weight: bold;">Jordan Spizike Low</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Older Kids' Shoes</div>
+                  <span style="font-weight:bold;font-size:1.2rem;" >Ksh 13,679.62 </span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 18,999.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">28% off</div>
+                
+                </div>
+        
+         <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/promo3.jpg"  alt="s"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                </a>
+                        <div  style="color:black;font-weight: bold;">Nike Zoom Vomero 5</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Men's Shoes</div>
+                     <span style="font-weight:bold;font-size:1.2rem;" >Ksh 17,479.62 </span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 24,319.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">28% off</div>
+                
+                </div>
+           
+            </section>
+        <br>
+            <section class="section section-gray">
+<a href="products.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">View Our Products</a>
+                <h2>Welcome To Nike Store Nairobi</h2>
+                <div class="row"></div>
+             <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+               
+                        <img src="images/promo4.jpg"  alt="s"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+             </a>
+                        <div  style="color:red;font-weight: bold;">Customise</div>
+                        <div  style="color:black;font-weight: bold;">Nike Dunk High By You</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Women's Shoes</div>
+                   <span style="font-weight:bold;font-size:1.2rem;" >Ksh 24,319.62 </span>
+                
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/promo5.jpg"  alt="s"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+              </a>
+                        <div  style="color:black;font-weight: bold;">Luka 5</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Basketball Shoes</div>
+                   <span style="font-weight:bold;font-size:1.2rem;" >Ksh 14,439.62 </span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 19,759.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">27% off</div>  
+                
+                </div>
+        
+         <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/promo6.jpg"  alt="s"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 </a>
+                        <div  style="color:black;font-weight: bold;">Nike Air Max Plus VII</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Men's Shoes</div>
+                    <span style="font-weight:bold;font-size:1.2rem;" > Ksh 19,759.62</span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 28,119.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">29% off</div>
+                
+                </div>
+            </section>
+       <br>
+            <section class="section section-gray">
+<a href="products.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">View Our Products</a>
+                <h2>Welcome To Nike Store Nairobi</h2>
+                <div class="row"></div>
+             <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/promo7.jpg"  alt="s"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                     </a>
+                        <div  style="color:red;font-weight: bold;">Customise</div>
+                        <div  style="color:black;font-weight: bold;">Nike Dunk Low Unlocked  By Miles Chamley-Watson</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Custom Shoes</div>
+                    <span style="font-weight:bold;font-size:1.2rem;" > Ksh 24,319.62</span>
+                
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/promo8.jpg"  alt="s" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                  </a>
+                        <div  style="color:black;font-weight: bold;">Air Jordan 1 Mid</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Men's Shoes</div>
+                   <span style="font-weight:bold;font-size:1.2rem;" > Ksh 15,199.62</span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 21,279.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">28% off</div>
+                
+                </div>
+        
+         <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/promo9.jpg"  alt="s"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                  </a>
+                        <div  style="color:black;font-weight: bold;">Nike Streakfly 2</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Men's Road Racing Shoes</div>
+                <span style="font-weight:bold;font-size:1.2rem;" > Ksh 19,759.62</span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 28,119.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">29% off</div>    
+                
+                </div>
+            </section>
+        <br>
+            <section class="section section-gray">
+<a href="products.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">View Our Products</a>
+                <h2>Welcome To Nike Store Nairobi</h2>
+                <div class="row"></div>
+             <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/promo10.jpg"  alt="s"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                  </a>
+                        <div  style="color:black;font-weight: bold;">Nike Air Max Moto 2K SE</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Men's Shoes</div>
+                   <span style="font-weight:bold;font-size:1.2rem;" > Ksh 14,439.62</span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 19,759.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">27% off</div>
+                
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+               
+                        <img src="images/promo11.jpg"  alt="s"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 </a>
+                        <div  style="color:black;font-weight: bold;">Nike Zoom Vomero 5 Premium</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Men's Shoes</div>
+                    <span style="font-weight:bold;font-size:1.2rem;" > Ksh 17,479.62</span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 24,319.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">28% off</div>
+               
+                </div>
+        
+         <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/promo12.jpg"  alt="s"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 </a>
+                        <div  style="color:black;font-weight: bold;">Air Jordan 1 Mid</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Men's Shoes</div>
+                      <span style="font-weight:bold;font-size:1.2rem;" > Ksh 15,199.62</span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 21,279.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">28% off</div>
+                
+                </div>
+            </section>
+       <br>
+            <section class="section section-gray">
+<a href="products.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">View Our Products</a>
+                <h2>Welcome To Nike Store Nairobi</h2>
+                <div class="row"></div>
+             <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/promo13.jpg"  alt="s"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                   </a>
+                        <div  style="color:red;font-weight: bold;">Customise</div>
+                        <div  style="color:black;font-weight: bold;">Nike Dunk High  By You</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Custom Men's Shoes</div>
+                     <span style="font-weight:bold;font-size:1.2rem;" > Ksh 24,319.62</span>
+                
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+               
+                        <img src="images/promo14.jpg" alt="s"   style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+               </a>
+                        <div  style="color:black;font-weight: bold;">Air Jordan 1 Low</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Women's Shoes</div>
+                  <span style="font-weight:bold;font-size:1.2rem;" > Ksh 14,439.62</span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 19,759.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">27% off</div>   
+                
+                </div>
+        
+         <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/promo15.jpg"  alt="s"   style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                 </a>
+                        <div  style="color:black;font-weight: bold;">Air Jordan Sixty Plus Low</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Older Kids' Shoes</div>
+                     <span style="font-weight:bold;font-size:1.2rem;" > Ksh 13,679.62</span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 18,999.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">28% off</div>
+                
+                </div>
+            </section>
+        <br>
+            <section class="section section-gray">
+<a href="products.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">View Our Products</a>
+                <h2>Welcome To Nike Store Nairobi</h2>
+                <div class="row"></div>
+             <div class="column" style="border-radius: 30px;">
+                <a href="products.html" class="category-card">
+                        <img src="images/promo17.jpg"  alt="s"   style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                </a>
+                        <div  style="color:black;font-weight: bold;">Air Jordan 1 Low</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Women's Shoes</div>
+                    <span style="font-weight:bold;font-size:1.2rem;" > Ksh 14,439.62</span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 19,759.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">27% off</div>
+                
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+               
+                        <img src="images/promo18.jpg"  alt="s"   style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+               </a>
+                        <div  style="color:black;font-weight: bold;">Nike Zoom GP Challenge Pro PRM</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Women's Hard Court Tennis Shoes</div>
+                    <span style="font-weight:bold;font-size:1.2rem;" > Ksh 12,159.62</span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 16,719.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">27% off</div>
+                
+                </div>
+        
+         <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/promo19.jpg"  alt="s"   style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                </a>
+                        <div  style="color:red;font-weight: bold;">Customise</div>
+                        <div  style="color:black;font-weight: bold;">Nike Air Huarache  By You</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Custom Men's Shoes</div>
+                     <span style="font-weight:bold;font-size:1.2rem;" >Ksh 22,799.62</span> 
+                
+                </div>
+            </section>
+        <br>
+            <section class="section section-gray">
+<a href="products.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">View Our Products</a>
+                <h2>Welcome To Nike Store Nairobi</h2>
+                <div class="row"></div>
+             <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/promo20.jpg"  alt="s"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                  </a>
+                        <div  style="color:black;font-weight: bold;">Nike P-6000 Premium</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Big Kids' Shoes</div>
+                    <span style="font-weight:bold;font-size:1.2rem;" > Ksh 12,159.62</span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 15,199.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">20% off</div>
+                
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/promo21.jpg"  alt="s"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                  </a>
+                        <div  style="color:black;font-weight: bold;">Nike Zoom Rival Sprint Glam</div>
+                 <div  style="color:darkgrey;font-weight: bold;">Athletics Sprinting Spikes</div>
+                     <span style="font-weight:bold;font-size:1.2rem;" > Ksh 12,159.62</span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 15,199.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">20% off</div>
+                
+                </div>
+        
+         <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+               
+                        <img src="images/promo22.jpg"  alt="s" style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                  </a>
+                        <div  style="color:red;font-weight: bold;">Recycled Materials</div>
+                        <div  style="color:black;font-weight: bold;">Nike Stride</div>
+                 <div  style="color:darkgrey;font-weight: bold;">Men's Repel UV Running Jacket</div>
+                     <span style="font-weight:bold;font-size:1.2rem;" > Ksh 13,679.62</span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 18,999.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">28% off</div>
+                
+                </div>
+            </section>
+        <br>
+            <section class="section section-gray">
+<a href="products.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">View Our Products</a>
+                <h2>Welcome To Nike Store Nairobi</h2>
+                <div class="row"></div>
+             <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+               
+                        <img src="images/promo23.jpg"  alt="s"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                   </a>
+                        <div  style="color:black;font-weight: bold;">Jordan Trunner O/S</div>
+                 <div  style="color:darkgrey;font-weight: bold;">Men's Shoes</div>
+                  <span style="font-weight:bold;font-size:1.2rem;" > Ksh 12,159.62</span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 16,719.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">27% off</div> 
+                
+                </div>
+        
+                <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/promo24.jpg"  alt="s"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                   </a>
+                        <div  style="color:black;font-weight: bold;">Nike Tech</div>
+                 <div  style="color:darkgrey;font-weight: bold;">Men's Dri-FIT Short Knit Pants</div>
+                     <span style="font-weight:bold;font-size:1.2rem;" > Ksh 12,159.62</span>
+                <del>
+                 <span style="font-weight:bold;font-size:1.2rem;color:darkgrey;" >Ksh 14,439.62</span> 
+                </del>
+                 <div  style="color:green;font-weight: bold;">15% off</div>
+                
+                </div>
+        
+         <div class="column" style="border-radius: 30px;">
+                       <a href="products.html" class="category-card">
+                
+                        <img src="images/promo25.jpg"  alt="s"  style="border-radius:10%;object-fit:cover;" width="400"  height="300">   
+                  </a>
+                        <div  style="color:red;font-weight: bold;">Customise</div>
+                        <div  style="color:black;font-weight: bold;">Nike Air Huarache  By You</div>
+                 <div  style="color:darkgrey;font-weight: bold;" >Custom Men's Shoes</div>
+                    <span style="font-weight:bold;font-size:1.2rem;" >Ksh 22,799.62</span> 
+               
+                </div>
+            </section>
+      <a href="contact.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Order Now</a>
+           
+           
+           
+           
+           
+           
+        <!-- Sale Products -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Sale Products</h2>
+                <div class="products-grid" id="sale-products"></div>
+            </div>
+        </section>
+        
+        <!-- Discount Cards -->
+        <section class="section section-gray" style="border-radius: 30px;">
+            <div class="container" style="border-radius: 30px;">
+                <h2 class="section-title">Special Offers</h2>
+                <div class="discount-grid" style="border-radius: 30px;">
+                    <div class="discount-card" style="border-radius: 30px;">
+                        <h3 class="discount-title">20% Off First Order</h3>
+                        <p class="discount-text">Sign up for our newsletter and get 20% off your first purchase</p>
+                        <a href="products.html" class="btn btn-primary" style="border-radius: 30px;">Shop Now</a>
+                    </div>
+                    <div class="discount-card" style="border-radius: 30px;">
+                        <h3 class="discount-title">Free Shipping</h3>
+                        <p class="discount-text">Free shipping on orders over Ksh 12,930.0</p>
+                        <a href="products.html" class="btn btn-primary" style="border-radius: 30px;">Shop Now</a>
+                    </div>
+                    <div class="discount-card" style="border-radius: 30px;">
+                        <h3 class="discount-title">Student Discount</h3>
+                        <p class="discount-text">15% off for students with valid ID</p>
+                        <a href="products.html" class="btn btn-primary" style="border-radius: 30px;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Limited-Time Offers -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Limited-Time Offers</h2>
+                <div class="products-grid" id="limited-offers"></div>
+            </div>
+        </section>
+        
+        <!-- Featured Deals -->
+        <section class="section section-gray">
+            <div class="container">
+                <h2 class="section-title">Featured Deals</h2>
+                <div class="products-grid" id="featured-deals"></div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="section section-black">
+            <div class="container">
+                <div class="promo-content">
+                    <h2 class="promo-title">Don't Miss Out</h2>
+                    <p class="promo-text">Subscribe to our newsletter for exclusive deals</p>
+                    <a href="index.html#newsletter" class="btn btn-white" style="border-radius: 30px;">Subscribe Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="men.html">Men</a></li>
+                        <li><a href="women.html">Women</a></li>
+                        <li><a href="sports.html">Sports</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="help.html#shipping">Shipping</a></li>
+                        <li><a href="help.html#returns">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="promotions&discounts.html">Promotions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Follow Us</h3>
+                   <div class="social-links">
+                        <a href="https://www.instagram.com/nike_nairobi_store" target="_blank" class="social-link" aria-label="Instagram" style="border-radius: 30px;">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61590626879224&mibextid=rS40aB7S9Ucbxw6v" target="_blank" class="social-link" aria-label="Facebook" style="border-radius: 30px;">Facebook</a>
+                        <a href="https://www.tiktok.com/@nike.store.nairobi" target="_blank" class="social-link"  aria-label="TikTok"  style="border-radius: 30px;">TikTok</a>
+                        <a href="https://x.com/@nike_nairobi_ke"  target="_blank" class="social-link" aria-label="X" style="border-radius: 30px;">X</a>
+                        <a href="https://wa.me/+254762062060"   target="_blank" class="social-link" aria-label="WhatsApp" style="border-radius: 30px;">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p style="font-weight:bold;">&copy; 2026 Nike Store Nairobi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

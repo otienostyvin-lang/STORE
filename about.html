@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about our story, mission, vision, and commitment to quality.">
+    <title>About Us | NIKE STORE NAIROBI KENYA.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                  <a class="logo" href="index.html">
+<img src="images/logo.png"  alt="logo" width="100" height="100">
+            </a>
+            </div>
+            
+            <nav class="nav-desktop">
+                <ul class="nav-list">
+                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="backtoschoool.html">Back to School</a></li>
+                    <li><a href="Jordan.html">Jordan</a></li>
+                    <li><a href="converse.html">Converse</a></li>
+                    <li><a href="men.html">Men</a></li>
+                    <li><a href="women.html">Women</a></li>
+                    <li><a href="nikeskims.html">Nike SKIMS</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="promotions&discounts.html">Promotions</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="search-btn" aria-label="Open search">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                </button>
+                
+                <button class="cart-btn" aria-label="Open cart">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+                
+                <button class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <button class="search-close" aria-label="Close search">&times;</button>
+            <input type="text" class="search-input" placeholder="Search for products..." aria-label="Search products">
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+    
+    <!-- Cart Drawer -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-overlay"></div>
+        <div class="cart-content">
+            <div class="cart-header">
+                <h1>Shopping Cart</h1>
+                <button class="cart-close" aria-label="Close cart">&times;</button>
+            </div>
+            <div class="cart-items" id="cart-items"></div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                 <span class="checkout-total-price">KSh 0.00</span>
+                <strong id="checkout-total-price">
+                        KSh 0
+                    </strong>
+                </div>
+                <button type="button" class="btn btn-primary btn-block checkout-btn" id="checkout-btn">
+    Checkout
+</button> 
+                <button class="btn btn-secondary btn-block continue-shopping">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+      <!-- Checkout Modal -->
+<div class="checkout-modal" id="checkout-modal">
+    <div class="checkout-overlay"></div>
+
+    <div class="checkout-content">
+
+        <div class="checkout-header">
+            <h2>Checkout</h2>
+            <button type="button" class="checkout-close" id="checkout-close">
+                &times;
+            </button>
+        </div>
+
+        <form
+            id="checkout-form"
+            action="https://formspree.io/f/xkjgnynd"
+            method="POST"
+        >
+
+            <h3>Customer Information</h3>
+
+            <div class="form-group">
+                <label for="customer-name">Full Name</label>
+                <input
+                    type="text"
+                    id="customer-name"
+                    name="customer_name"
+                    placeholder="Enter your full name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="customer-email">Email Address</label>
+                <input
+                    type="email"
+                    id="customer-email"
+                    name="customer_email"
+                    placeholder="Enter your email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="customer-phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="customer-phone"
+                    name="customer_phone"
+                    placeholder="e.g. 0712345678"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="delivery-location">Delivery Location</label>
+                <textarea
+                    id="delivery-location"
+                    name="delivery_location"
+                    placeholder="Enter your delivery address/location"
+                    rows="3"
+                    required
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="payment-method">Payment Method</label>
+
+                <select
+                    id="payment-method"
+                    name="payment_method"
+                    required
+                >
+                    <option value="">Select payment method</option>
+                    <option value="M-Pesa">M-Pesa</option>
+                    <option value="Cash on Delivery">Cash on Delivery</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                </select>
+            </div>
+
+            <!-- Cart order information will be inserted here -->
+            <input type="hidden" name="order_items" id="order-items">
+
+            <input type="hidden" name="order_total" id="order-total">
+
+            <div class="checkout-summary">
+
+                <h3>Order Summary</h3>
+
+                <div id="checkout-items"></div>
+
+                <div class="checkout-total">
+                    <strong>Total:</strong>
+                    <strong id="checkout-total-price">
+                        KSh 0
+                    </strong>
+                </div>
+
+            </div>
+
+            <button
+                type="submit"
+                class="btn btn-primary btn-block"
+            >
+                Place Order
+            </button>
+
+        </form>
+
+    </div>
+</div>
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-content">
+            <nav class="mobile-nav-list">
+                <a href="index.html" class="mobile-nav-link" style="border-radius: 30px;">Home</a>
+                <a href="backtoschoool.html" class="mobile-nav-link" style="border-radius: 30px;">Back to School</a>
+                <a href="Jordan.html" class="mobile-nav-link" style="border-radius: 30px;">Jordan</a>
+                <a href="converse.html" class="mobile-nav-link" style="border-radius: 30px;">Converse</a>
+                <a href="men.html" class="mobile-nav-link" style="border-radius: 30px;">Men</a>
+                <a href="women.html" class="mobile-nav-link" style="border-radius: 30px;">Women</a>
+                <a href="nikeskims.html" class="mobile-nav-link" style="border-radius: 30px;">Nike SKIMS</a>
+                <a href="sports.html" class="mobile-nav-link" style="border-radius: 30px;">Sports</a>
+                <a href="products.html" class="mobile-nav-link" style="border-radius: 30px;">Products</a>
+                <a href="promotions&discounts.html" class="mobile-nav-link" style="border-radius: 30px;">Promotions</a>
+                <a href="about.html" class="mobile-nav-link active" style="border-radius: 30px;">About</a>
+                <a href="careers.html" class="mobile-nav-link" style="border-radius: 30px;">Careers</a>
+                <a href="help.html" class="mobile-nav-link" style="border-radius: 30px;">Help</a>
+                <a href="contact.html" class="mobile-nav-link" style="border-radius: 30px;">Contact</a>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+         <section class="slider">
+    <h2 class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 2rem;"> NIKE STORE NAIROBI</h2>
+            <div class="slides">
+
+        <div class="slide">
+            
+         <div class="content">
+          <img src="images/about1.jpg" alt="Shoe 1" style="border-radius:1%;object-fit:cover;">
+            <a href="products.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+
+        <div class="slide">
+           <div class="content">
+            <img src="images/nike2.jpg" alt="Shoe 2" style="border-radius:1%;object-fit:cover;">
+       <a href="products.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+<div class="slide">
+            
+         <div class="content">
+          <img src="images/about1.jpg" alt="Shoe 1" style="border-radius:1%;object-fit:cover;">
+            <a href="products.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+
+        <div class="slide">
+           <div class="content">
+            <img src="images/nike2.jpg" alt="Shoe 2" style="border-radius:1%;object-fit:cover;">
+       <a href="products.html" class="btn btn-primary" style="border-radius: 30px;font-weight: bold;font-size: 1rem;">Shop</a>
+        </div>
+        </div>
+        
+
+    </div>
+</section>
+        
+        <!-- Store Introduction -->
+        <section class="section">
+            <div class="container">
+                <div class="about-content">
+                    <h2 class="about-heading">Welcome to Storefront</h2>
+                    <p class="about-text">We are your premier destination for high-quality footwear, fashion, and sports products. Founded with a passion for style and performance, we bring you the latest collections from top brands around the world.</p>
+                    <p class="about-text">Our commitment is to provide exceptional products, outstanding customer service, and an unparalleled shopping experience.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Our Story -->
+        <section class="section section-gray">
+            <div class="container">
+                <h2 class="section-title">Our Story</h2>
+                <div class="about-content">
+                    <p class="about-text">What started as a small sneaker shop has grown into a comprehensive fashion and sports destination. We believe that everyone deserves access to premium quality products that combine style, comfort, and performance.</p>
+                    <p class="about-text">Our journey has been driven by our love for innovation and our dedication to customer satisfaction. We continuously expand our collection to bring you the latest trends and timeless classics.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Mission & Vision -->
+        <section class="section">
+            <div class="container">
+                <div class="mission-vision-grid">
+                    <div class="mv-card" style="border-radius: 30px;">
+                        <h3 class="mv-title">Our Mission</h3>
+                        <p class="mv-text">To provide our customers with the best selection of premium footwear and fashion products, delivered with exceptional service and value.</p>
+                    </div>
+                    <div class="mv-card" style="border-radius: 30px;">
+                        <h3 class="mv-title">Our Vision</h3>
+                        <p class="mv-text">To be the leading destination for fashion-forward individuals who value quality, style, and performance in every purchase.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Core Values -->
+        <section class="section section-gray">
+            <div class="container">
+                <h2 class="section-title">Core Values</h2>
+                <div class="values-grid">
+                    <div class="value-card" style="border-radius: 30px;">
+                        <h3 class="value-title">Quality</h3>
+                        <p class="value-text">We curate only the finest products from trusted brands.</p>
+                    </div>
+                    <div class="value-card" style="border-radius: 30px;">
+                        <h3 class="value-title">Customer First</h3>
+                        <p class="value-text">Your satisfaction is our top priority in everything we do.</p>
+                    </div>
+                    <div class="value-card" style="border-radius: 30px;">
+                        <h3 class="value-title">Innovation</h3>
+                        <p class="value-text">We stay ahead of trends to bring you the latest styles.</p>
+                    </div>
+                    <div class="value-card" style="border-radius: 30px;">
+                        <h3 class="value-title">Integrity</h3>
+                        <p class="value-text">We operate with honesty and transparency in all interactions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Why Shop With Us -->
+        <section class="section" >
+            <div class="container" >
+                <h2 class="section-title">Why Shop With Us</h2>
+                <div class="features-grid">
+                    <div class="feature-card" style="border-radius: 30px;">
+                        <h3 class="feature-title">Authentic Products</h3>
+                        <p class="feature-text">100% genuine products from authorized retailers.</p>
+                    </div>
+                    <div class="feature-card" style="border-radius: 30px;">
+                        <h3 class="feature-title">Fast Shipping</h3>
+                        <p class="feature-text">Quick and reliable delivery to your doorstep.</p>
+                    </div>
+                    <div class="feature-card" style="border-radius: 30px;">
+                        <h3 class="feature-title">Easy Returns</h3>
+                        <p class="feature-text">Hassle-free return policy for your peace of mind.</p>
+                    </div>
+                    <div class="feature-card" style="border-radius: 30px;">
+                        <h3 class="feature-title">Expert Support</h3>
+                        <p class="feature-text">Dedicated customer service team ready to help.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quality Statement -->
+        <section class="section section-black">
+            <div class="container">
+                <div class="promo-content">
+                    <h2 class="promo-title">Quality You Can Trust</h2>
+                    <p class="promo-text">Every product is carefully selected to meet our high standards.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Customer Commitment -->
+        <section class="section">
+            <div class="container">
+                <div class="about-content">
+                    <h2 class="about-heading">Our Commitment to You</h2>
+                    <p class="about-text">We are dedicated to providing you with an exceptional shopping experience. From browsing our collection to receiving your order, every step is designed with your satisfaction in mind.</p>
+                    <p class="about-text">Thank you for choosing Storefront. We look forward to being part of your style journey.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="men.html">Men</a></li>
+                        <li><a href="women.html">Women</a></li>
+                        <li><a href="sports.html">Sports</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="help.html#shipping">Shipping</a></li>
+                        <li><a href="help.html#returns">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="promotions&discounts.html">Promotions</a></li>
+                    </ul>
+                </div>
+                
+                 <div class="footer-section">
+                    <h3 class="footer-title">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/nike_nairobi_store" target="_blank" class="social-link" aria-label="Instagram" style="border-radius: 30px;">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61590626879224&mibextid=rS40aB7S9Ucbxw6v" target="_blank" class="social-link" aria-label="Facebook" style="border-radius: 30px;">Facebook</a>
+                        <a href="https://www.tiktok.com/@nike.store.nairobi" target="_blank" class="social-link"  aria-label="TikTok"  style="border-radius: 30px;">TikTok</a>
+                        <a href="https://x.com/@nike_nairobi_ke"  target="_blank" class="social-link" aria-label="X" style="border-radius: 30px;">X</a>
+                        <a href="https://wa.me/+254762062060"   target="_blank" class="social-link" aria-label="WhatsApp" style="border-radius: 30px;">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p style="font-weight:bold;">&copy; 2026 Nike Store Nairobi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
